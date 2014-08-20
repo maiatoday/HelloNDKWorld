@@ -1,1 +1,1 @@
-include ':HelloNDKWorld'
+include 'app', 'lib'

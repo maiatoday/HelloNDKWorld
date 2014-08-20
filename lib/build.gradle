@@ -1,0 +1,15 @@
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+
+    defaultConfig {
+        ndk {
+            moduleName "ndk1"
+            //LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
+            ldLibs "log"
+        }
+    }
+}
