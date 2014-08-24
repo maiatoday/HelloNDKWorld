@@ -3,11 +3,7 @@ HelloNDKWorld
 
 Hello world using NDK in gradle and android studio
 
-This is a skeleton app that has a HelloWorld activity and a integrates the NDK. The jni folder is 
-in the HelloNDKWorld folder. To do an ndk build first set the path to NDK installation by creating a file gradle.properties in the HelloNDKWorldProject directory. It should contain a line that looks like this:
-   ndkDir=/yourInstallationDirectory/android-ndk-r9
-There is a gradle task to run the build but a normal build will also trigger an ndk-build. The resulting .o files are zipped up in a jar in the build/native-libs folder.
-If you only want to do the ndk build and package the libs do the following command:
-  ./gradlew ndk
-  
-  Since creating this project, some new NDK support has been added to gradle android plugin. So this project is no longer that necesssary. Look here to see how to do this. https://software.intel.com/en-us/videos/using-the-ndk-with-android-studio
+Fill in your ndk folde in local properties with the following line
+ndk.dir=your_ndk_location
+
+This app has been updated to build the ndk part as suggested in the gradle examples. Before NDK was supported by the android gradle plugin, this project could build the ndk files form targets defined in the gradle file.
