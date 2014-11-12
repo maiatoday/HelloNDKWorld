@@ -9,4 +9,17 @@
     tools:context=".MainActivity$PlaceholderFragment">
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Native Hello World"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|top"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:layout_below="@+id/button"/>
+
+
 </RelativeLayout>

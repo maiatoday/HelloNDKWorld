@@ -32,17 +32,6 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
-
-        TextView tv = (TextView) findViewById(R.id.text);
-        tv.setText( stringFromJNI() );
-
-        Button btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                helloLog("This will log to LogCat via C");
-            }
-        });
     }
 
 
@@ -78,6 +67,18 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+
+            TextView tv = (TextView) rootView.findViewById(R.id.text);
+            tv.setText( ((MainActivity) getActivity()).stringFromJNI() );
+
+            Button btn = (Button) rootView.findViewById(R.id.button);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((MainActivity) getActivity()).helloLog("This will log to LogCat via C");
+                }
+            });
             return rootView;
         }
     }
