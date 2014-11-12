@@ -11,10 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
     private native void helloLog(String logThis);
+    private native String stringFromJNI();
 
     static {
         System.loadLibrary("ndk1");
@@ -30,6 +32,9 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        TextView tv = (TextView) findViewById(R.id.text);
+        tv.setText( stringFromJNI() );
 
         Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
