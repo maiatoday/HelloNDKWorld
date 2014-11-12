@@ -1,5 +1,8 @@
 
 apply plugin: 'com.android.library'
+ext {
+    NDK_TOOLCHAIN_VERSION  = '4.9'
+}
 
 android {
     compileSdkVersion 19
@@ -10,6 +13,7 @@ android {
             moduleName "ndk1"
             //LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
             ldLibs "log"
+            abiFilters "x86_64"
         }
     }
 }
