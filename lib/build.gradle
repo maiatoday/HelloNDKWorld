@@ -13,7 +13,7 @@ android {
             moduleName "ndk1"
             //LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
             ldLibs "log"
-            abiFilters "x86_64"
+            abiFilters "x86_64 x86 armeabi"
         }
     }
 }
